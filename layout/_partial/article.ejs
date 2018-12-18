@@ -9,6 +9,18 @@
       <header class="article-header">
         <%- partial('post/title', {class_name: 'article-title'}) %>
       </header>
+      <% if (!index){ %>
+      <footer class="article-footer">
+        <a data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link"><%= __('share') %></a>
+        <% if (post.comments && theme.duoshuo_shortname){ %>
+          <a href="<%- post.permalink %>#ds-thread" class="article-comment-link"><%= __('comment') %></a>
+        <% } %>
+        <% if (post.comments && theme.disqus_shortname){ %>
+          <a href="<%- post.permalink %>#disqus_thread" class="article-comment-link"><%= __('comment') %></a>
+        <% } %>
+        <%- partial('post/tag') %>
+      </footer>
+      <% } %>
     <% } %>
     <div class="article-entry" itemprop="articleBody">
       <% if (post.excerpt && index){ %>
@@ -40,7 +52,19 @@
       <%- partial('post/tag') %>
     </footer>
   </div>
+
   <% if (!index){ %>
+    <div class="article-entry" itemprop="articleBody">
+      <p>
+      欢迎扫码关注微信公众号获取最新动态，读者交流 QQ 群：338272982 。
+      <br>
+      </p>
+      <p>
+        <a href="https://riboseyim.com" title="微信公众号@睿哥杂货铺" rel="fancy-group" class="fancy-ctn fancybox">
+          <img src="http://riboseyim-qiniu.riboseyim.com/ID_RiboseYim_201812.png" title="微信公众号@睿哥杂货铺">
+        </a>
+      </p>
+    </div>
     <%- partial('random_posts') %>
     <%- partial('post/nav') %>
   <% } %>
@@ -48,4 +72,3 @@
  <% if (!index){ %>
      <%- partial('comments') %>
   <% } %>
-

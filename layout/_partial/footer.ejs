@@ -5,7 +5,8 @@
   <div class="outer">
     <div id="footer-left">
       &copy; 2014 - <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>&nbsp;|&nbsp;
-      <%= __('theme_by') %> <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+      <%= __('theme_by') %> <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>  | <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" target="_blank">Copyright 2016-<%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>
+     授权：保持署名-非商业性使用-禁止演绎| License BY-NC-ND 4.0 </a>
     </div>
      <div id="footer-right">
       <%= __('contact') %>&nbsp;|&nbsp;<%= config.email || theme.email  || config.url %>
@@ -13,3 +14,5 @@
   </div>
 </footer>
  <%- js('jquery/jquery.min.js') %>
+
+ <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1258500076'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1258500076%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
